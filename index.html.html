@@ -1,0 +1,574 @@
+0..<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Gone Airborne Drone Services — FAA Part 107 certified aerial drone services in San Antonio, TX. Real estate, construction, roofing, solar, and industrial inspection. Veteran owned.">
+<title>Gone Airborne Drone Services | San Antonio, TX | FAA Part 107 Certified</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;400;500;600;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --blue:#1A6FC4;--blue-light:#2a85e0;--blue-glow:rgba(26,111,196,0.4);
+  --black:#0a0a0a;--black-card:#111111;--black-mid:#1a1a1a;
+  --white:#ffffff;--gray:#888888;--gray-light:#cccccc;--gold:#C9A02A;
+  --font-display:'Bebas Neue',sans-serif;--font-body:'Montserrat',sans-serif;
+  --font-accent:'Rajdhani',sans-serif;--max-width:1200px;
+  --focus-ring:3px solid #FFD700;--focus-offset:3px;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;font-size:16px;}
+.skip-link{position:absolute;top:-100%;left:0;background:var(--blue);color:var(--white);padding:12px 24px;font-weight:700;font-size:.9rem;letter-spacing:1px;z-index:99999;text-decoration:none;transition:top .2s;}
+.skip-link:focus{top:0;outline:var(--focus-ring);}
+body{background:var(--black);color:var(--white);font-family:var(--font-body);overflow-x:hidden;line-height:1.6;}
+*:focus-visible{outline:var(--focus-ring);outline-offset:var(--focus-offset);border-radius:2px;}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}.reveal{opacity:1!important;transform:none!important;}}
+@media(forced-colors:active){.btn-primary,.btn-secondary,.form-btn{border:2px solid ButtonText;}}
+img{max-width:100%;height:auto;display:block;}
+a{color:inherit;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:20px 60px;display:flex;align-items:center;justify-content:space-between;background:linear-gradient(180deg,rgba(0,0,0,.95) 0%,transparent 100%);backdrop-filter:blur(10px);transition:background .3s,box-shadow .3s;}
+nav[data-scrolled="true"]{background:rgba(5,5,5,.98);box-shadow:0 1px 0 rgba(26,111,196,.2);}
+.nav-logo{font-family:var(--font-display);font-size:1.8rem;letter-spacing:3px;color:var(--white);text-decoration:none;}
+.nav-logo span{color:var(--blue);}
+.nav-toggle{display:none;background:none;border:1px solid rgba(255,255,255,.2);color:var(--white);padding:8px 12px;cursor:pointer;font-size:1.1rem;border-radius:2px;min-width:44px;min-height:44px;align-items:center;justify-content:center;}
+.nav-links{display:flex;gap:40px;list-style:none;}
+.nav-links a{color:var(--gray-light);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;transition:color .3s;position:relative;padding-bottom:4px;min-height:44px;display:inline-flex;align-items:center;}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--blue);transition:width .3s;}
+.nav-links a:hover{color:var(--white);}
+.nav-links a:hover::after{width:100%;}
+.nav-cta{background:var(--blue)!important;color:var(--white)!important;padding:10px 24px!important;border-radius:2px;font-weight:700!important;min-height:44px!important;}
+.nav-cta:hover{background:var(--blue-light)!important;}
+.nav-cta::after{display:none!important;}
+
+/* HERO */
+.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(26,111,196,.15) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(26,111,196,.08) 0%,transparent 50%),linear-gradient(180deg,#0a0a0a 0%,#0d1520 50%,#0a0a0a 100%);}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(26,111,196,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(26,111,196,.06) 1px,transparent 1px);background-size:60px 60px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%);pointer-events:none;}
+.hero-content{position:relative;z-index:2;text-align:center;max-width:900px;padding:80px 40px 0;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(26,111,196,.15);border:1px solid rgba(26,111,196,.3);padding:8px 20px;border-radius:100px;font-size:.7rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:32px;animation:fadeInDown .8s ease forwards;}
+.live-dot{width:6px;height:6px;background:var(--blue);border-radius:50%;animation:pulse-dot 2s infinite;flex-shrink:0;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(.8);}}
+.hero-title{font-family:var(--font-display);font-size:clamp(3.5rem,10vw,8rem);line-height:.9;letter-spacing:4px;animation:fadeInUp .8s ease .2s both;}
+.hero-title .line1{color:var(--white);display:block;}
+.hero-title .line2{color:var(--blue);display:block;text-shadow:0 0 80px rgba(26,111,196,.4);}
+.hero-sub{font-family:var(--font-accent);font-size:1rem;font-weight:500;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-top:20px;animation:fadeInUp .8s ease .4s both;}
+.hero-divider{width:60px;height:2px;background:var(--blue);margin:30px auto;animation:scaleIn .8s ease .5s both;}
+.hero-desc{font-size:1rem;color:var(--gray-light);line-height:1.8;max-width:560px;margin:0 auto 40px;animation:fadeInUp .8s ease .6s both;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeInUp .8s ease .7s both;}
+.btn-primary{background:var(--blue);color:var(--white);padding:16px 40px;min-height:48px;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;border-radius:2px;transition:all .3s;display:inline-flex;align-items:center;border:2px solid transparent;}
+.btn-primary:hover{background:var(--blue-light);transform:translateY(-2px);box-shadow:0 10px 30px var(--blue-glow);}
+.btn-secondary{background:transparent;color:var(--white);padding:16px 40px;min-height:48px;text-decoration:none;font-weight:700;font-size:.8rem;letter-spacing:2px;text-transform:uppercase;border:2px solid rgba(255,255,255,.2);border-radius:2px;transition:all .3s;display:inline-flex;align-items:center;}
+.btn-secondary:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-2px);}
+.hero-stats{position:absolute;bottom:60px;left:0;right:0;display:flex;justify-content:center;gap:60px;flex-wrap:wrap;padding:0 20px;animation:fadeInUp .8s ease .9s both;}
+.stat{text-align:center;}
+.stat-num{font-family:var(--font-display);font-size:2.2rem;color:var(--blue);letter-spacing:2px;line-height:1;}
+.stat-label{font-size:.65rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px;}
+@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+@keyframes scaleIn{from{opacity:0;transform:scaleX(0);}to{opacity:1;transform:scaleX(1);}}
+
+/* SECTIONS */
+section{padding:120px 60px;}
+.section-label{font-size:.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--blue);margin-bottom:16px;display:flex;align-items:center;gap:12px;}
+.section-label::before{content:'';width:30px;height:1px;background:var(--blue);flex-shrink:0;}
+.section-title{font-family:var(--font-display);font-size:clamp(2rem,5vw,4rem);line-height:1;letter-spacing:2px;margin-bottom:20px;}
+.section-desc{font-size:1rem;color:var(--gray-light);line-height:1.8;max-width:560px;}
+.section-divider{position:relative;}
+.section-divider::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--blue),transparent);}
+
+/* SERVICES */
+.services{background:var(--black);}
+.services-header{max-width:var(--max-width);margin:0 auto 80px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;}
+.services-grid{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:2px;}
+.service-card{background:var(--black-card);padding:48px 40px;position:relative;overflow:hidden;transition:background .3s,transform .3s;}
+.service-card::before{content:'';position:absolute;bottom:0;left:0;width:100%;height:2px;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+.service-card:hover{background:#141414;transform:translateY(-4px);}
+.service-card:hover::before{transform:scaleX(1);}
+.service-icon{font-size:2rem;margin-bottom:24px;display:block;}
+.service-name{font-family:var(--font-accent);font-size:1.1rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;color:var(--white);}
+.service-desc{font-size:.85rem;color:var(--gray);line-height:1.7;margin-bottom:24px;}
+.service-price{font-family:var(--font-display);font-size:1.5rem;color:var(--blue);letter-spacing:2px;}
+.service-card-num{position:absolute;top:20px;right:20px;font-family:var(--font-display);font-size:3.5rem;color:rgba(26,111,196,.05);line-height:1;pointer-events:none;}
+
+/* ABOUT */
+.about{background:var(--black-mid);position:relative;overflow:hidden;}
+.about-inner{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:center;}
+.about-card-main{background:var(--black-card);border:1px solid rgba(26,111,196,.2);padding:48px;position:relative;}
+.about-card-main::before{content:'';position:absolute;top:0;left:0;width:60px;height:3px;background:var(--blue);}
+.about-name{font-family:var(--font-display);font-size:2.2rem;letter-spacing:3px;margin-bottom:4px;}
+.about-role{font-size:.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:24px;}
+.about-text{font-size:.9rem;color:var(--gray-light);line-height:1.8;margin-bottom:24px;}
+.credential-list{list-style:none;display:flex;flex-direction:column;gap:12px;margin-top:8px;}
+.credential-item{display:flex;align-items:center;gap:12px;font-size:.82rem;font-weight:600;color:var(--gray-light);}
+.credential-item::before{content:'';width:20px;height:1px;background:var(--blue);flex-shrink:0;}
+.about-float-card{position:absolute;bottom:-30px;right:-30px;background:var(--blue);padding:24px 32px;text-align:center;}
+.float-num{font-family:var(--font-display);font-size:3rem;letter-spacing:2px;line-height:1;}
+.float-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;opacity:.85;margin-top:4px;}
+.veteran-badge{display:inline-block;background:rgba(201,160,42,.1);border:1px solid rgba(201,160,42,.3);padding:8px 18px;font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);border-radius:2px;margin-top:32px;}
+
+/* MARKETS */
+.markets{background:var(--black);}
+.markets-inner{max-width:var(--max-width);margin:0 auto;}
+.markets-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;flex-wrap:wrap;gap:24px;}
+.portfolio{background:var(--black-mid);position:relative;}
+.portfolio-header{max-width:var(--max-width);margin:0 auto 60px;}
+.portfolio-grid{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.portfolio-item{position:relative;overflow:hidden;border-radius:2px;aspect-ratio:4/3;background:var(--black-card);}
+.portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.portfolio-item:hover img{transform:scale(1.06);}
+.portfolio-caption{position:absolute;left:0;right:0;bottom:0;padding:20px;background:linear-gradient(180deg,transparent,rgba(0,0,0,.85));font-family:var(--font-accent);font-size:.85rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;color:var(--white);}
+.markets-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.market-card{background:var(--black-card);padding:40px 32px;border-bottom:2px solid transparent;transition:border-color .3s,transform .3s,background .3s;}
+.market-card:hover{border-bottom-color:var(--blue);transform:translateY(-6px);background:#141414;}
+.market-icon{font-size:2.5rem;margin-bottom:20px;display:block;transition:transform .3s;}
+.market-card:hover .market-icon{transform:scale(1.1);}
+.market-name{font-family:var(--font-accent);font-size:1.05rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.market-desc{font-size:.82rem;color:var(--gray);line-height:1.7;}
+
+/* PRICING */
+.pricing{background:var(--black);}
+.pricing-inner{max-width:var(--max-width);margin:0 auto;}
+.pricing-header{text-align:center;margin-bottom:70px;}
+.pricing-header .section-label{justify-content:center;}
+.pricing-header .section-label::before{display:none;}
+.pricing-header .section-label::after{content:'';width:30px;height:1px;background:var(--blue);}
+.pricing-header .section-desc{max-width:560px;margin:0 auto;}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;align-items:start;}
+.pricing-card{background:var(--black-card);padding:56px 44px;position:relative;transition:transform .3s;}
+.pricing-card.featured{background:var(--blue);transform:translateY(-12px);}
+.pricing-card:not(.featured):hover{transform:translateY(-6px);}
+.featured-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--gold);color:var(--black);font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 16px;white-space:nowrap;border-radius:2px;}
+.pricing-tier{font-size:.65rem;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--gray);margin-bottom:16px;}
+.pricing-card.featured .pricing-tier{color:rgba(255,255,255,.7);}
+.pricing-price{font-family:var(--font-display);font-size:3.5rem;letter-spacing:2px;line-height:1;margin-bottom:4px;}
+.pricing-price-sub{font-size:.75rem;color:var(--gray);margin-bottom:32px;}
+.pricing-card.featured .pricing-price-sub{color:rgba(255,255,255,.6);}
+.pricing-features{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:40px;}
+.pricing-feature{display:flex;align-items:flex-start;gap:10px;font-size:.85rem;color:var(--gray-light);line-height:1.4;}
+.pricing-card.featured .pricing-feature{color:rgba(255,255,255,.9);}
+.pricing-feature-icon{color:var(--blue);font-weight:700;flex-shrink:0;margin-top:1px;font-style:normal;}
+.pricing-card.featured .pricing-feature-icon{color:var(--white);}
+.pricing-btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:48px;padding:14px 32px;text-decoration:none;font-weight:700;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;transition:all .3s;border-radius:2px;border:2px solid transparent;cursor:pointer;font-family:var(--font-body);}
+.pricing-card:not(.featured) .pricing-btn{background:transparent;border-color:rgba(255,255,255,.15);color:var(--white);}
+.pricing-card:not(.featured) .pricing-btn:hover{background:var(--blue);border-color:var(--blue);}
+.pricing-card.featured .pricing-btn{background:var(--white);color:var(--blue);}
+.pricing-card.featured .pricing-btn:hover{background:rgba(255,255,255,.9);}
+
+/* WHY */
+.why{background:var(--black-mid);}
+.why-inner{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:100px;align-items:center;}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.why-card{background:var(--black-card);padding:36px 32px;transition:background .3s;}
+.why-card:hover{background:#141414;}
+.why-icon{font-size:1.8rem;margin-bottom:16px;display:block;}
+.why-title{font-family:var(--font-accent);font-size:.95rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.why-desc{font-size:.82rem;color:var(--gray);line-height:1.6;}
+
+/* CONTACT */
+.contact{background:var(--black);}
+.contact-inner{max-width:var(--max-width);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:100px;align-items:start;}
+.contact-detail{display:flex;align-items:center;gap:20px;padding:24px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.contact-detail-icon{width:48px;height:48px;background:rgba(26,111,196,.1);border:1px solid rgba(26,111,196,.2);display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;border-radius:2px;}
+.contact-detail-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:4px;}
+.contact-detail-value{font-size:.95rem;font-weight:600;color:var(--white);}
+.contact-detail-value a{color:var(--white);text-decoration:underline;text-decoration-color:transparent;transition:color .3s,text-decoration-color .3s;}
+.contact-detail-value a:hover{color:var(--blue);text-decoration-color:var(--blue);}
+.form-group{margin-bottom:20px;}
+.form-label{font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-bottom:8px;display:block;}
+.form-label .required{color:#ff6b6b;margin-left:4px;}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;}
+.form-input{width:100%;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:14px 18px;font-family:var(--font-body);font-size:1rem;outline:none;transition:border-color .3s,box-shadow .3s;border-radius:2px;min-height:48px;}
+.form-input:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,111,196,.2);}
+.form-input::placeholder{color:rgba(255,255,255,.25);}
+.form-input[aria-invalid="true"]{border-color:#ff6b6b;}
+textarea.form-input{height:120px;resize:vertical;min-height:100px;}
+.form-select{width:100%;background:var(--black-card);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:14px 18px;font-family:var(--font-body);font-size:1rem;outline:none;transition:border-color .3s,box-shadow .3s;border-radius:2px;appearance:none;cursor:pointer;min-height:48px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231A6FC4' stroke-width='2' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 16px center;padding-right:40px;}
+.form-select:focus{border-color:var(--blue);box-shadow:0 0 0 3px rgba(26,111,196,.2);}
+.form-error{color:#ff6b6b;font-size:.78rem;margin-top:6px;display:none;font-weight:600;}
+.form-error.visible{display:block;}
+.form-success{display:none;background:rgba(46,125,50,.15);border:1px solid rgba(46,125,50,.4);padding:16px 20px;border-radius:2px;font-size:.9rem;color:#81c784;margin-top:16px;font-weight:600;}
+.form-success.visible{display:block;}
+.form-btn{width:100%;background:var(--blue);color:var(--white);border:2px solid var(--blue);padding:18px;min-height:52px;font-family:var(--font-body);font-weight:700;font-size:.85rem;letter-spacing:3px;text-transform:uppercase;cursor:pointer;transition:all .3s;border-radius:2px;display:flex;align-items:center;justify-content:center;gap:8px;}
+.form-btn:hover:not(:disabled){background:var(--blue-light);border-color:var(--blue-light);transform:translateY(-2px);box-shadow:0 8px 24px var(--blue-glow);}
+.form-btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.form-note{font-size:.75rem;color:var(--gray);margin-top:12px;line-height:1.5;}
+
+/* FOOTER */
+footer{background:#050505;padding:60px;border-top:1px solid rgba(255,255,255,.05);}
+.footer-inner{max-width:var(--max-width);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+.footer-logo{font-family:var(--font-display);font-size:1.6rem;letter-spacing:3px;color:var(--white);text-decoration:none;}
+.footer-logo span{color:var(--blue);}
+.footer-tagline{font-size:.7rem;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--gray);margin-top:4px;}
+.footer-links{display:flex;gap:32px;list-style:none;flex-wrap:wrap;}
+.footer-links a{color:var(--gray);text-decoration:none;font-size:.75rem;font-weight:600;letter-spacing:1px;text-transform:uppercase;transition:color .3s;min-height:44px;display:inline-flex;align-items:center;}
+.footer-links a:hover{color:var(--blue);}
+.footer-copy{font-size:.7rem;color:rgba(255,255,255,.2);letter-spacing:1px;}
+.back-to-top{position:fixed;bottom:30px;right:30px;background:var(--blue);color:var(--white);border:none;width:48px;height:48px;border-radius:2px;cursor:pointer;font-size:1.2rem;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .3s,transform .3s;z-index:500;}
+.back-to-top.visible{opacity:1;pointer-events:auto;}
+.back-to-top:hover{transform:translateY(-3px);}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+
+/* MOBILE */
+@media(max-width:900px){
+  section{padding:80px 24px;}
+  nav{padding:20px 24px;}
+  .nav-toggle{display:flex;}
+  .nav-links{display:none;position:absolute;top:100%;left:0;right:0;background:rgba(5,5,5,.98);flex-direction:column;padding:24px;gap:0;border-top:1px solid rgba(26,111,196,.2);}
+  .nav-links.open{display:flex;}
+  .nav-links a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05);min-height:52px;}
+  .services-header,.about-inner,.why-inner,.contact-inner{grid-template-columns:1fr;gap:60px;}
+  .services-grid{grid-template-columns:1fr;}
+  .markets-grid{grid-template-columns:1fr 1fr;}
+  .portfolio-grid{grid-template-columns:1fr 1fr;}
+  .pricing-grid{grid-template-columns:1fr;gap:16px;}
+  .pricing-card.featured{transform:none;}
+  .why-grid{grid-template-columns:1fr;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;}
+  .hero-stats{gap:30px;bottom:30px;}
+  .hero-btns{flex-direction:column;align-items:center;}
+  .markets-header{flex-direction:column;align-items:flex-start;}
+  .about-float-card{right:0;}
+}
+@media(max-width:480px){
+  .markets-grid{grid-template-columns:1fr;}
+  .portfolio-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .hero-title{font-size:clamp(3rem,15vw,5rem);}
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<button class="back-to-top" id="backToTop" aria-label="Back to top of page">↑</button>
+
+<nav role="navigation" aria-label="Main navigation" id="nav">
+  <a href="#home" class="nav-logo" aria-label="Gone Airborne Drone Services Home">GONE <span>AIRBORNE</span></a>
+  <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open navigation menu">☰</button>
+  <ul class="nav-links" id="navLinks" role="list">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#contact" class="nav-cta">Book a Shoot</a></li>
+  </ul>
+</nav>
+
+<main id="main-content">
+
+<!-- HERO -->
+<section class="hero" id="home" aria-label="Hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-content">
+    <div class="hero-badge" role="status"><span class="live-dot" aria-hidden="true"></span>FAA Part 107 Certified · San Antonio, TX · Veteran Owned</div>
+    <h1 class="hero-title"><span class="line1">GONE</span><span class="line2">AIRBORNE</span></h1>
+    <p class="hero-sub">Drone Services · Real Estate · Photography</p>
+    <div class="hero-divider" aria-hidden="true"></div>
+    <p class="hero-desc">Professional aerial drone services for real estate, construction, roofing, solar, and oil &amp; gas across San Antonio and South Texas. One stop shop — aerials, ground photography, and video in a single visit.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-primary">Book a Shoot</a>
+      <a href="#services" class="btn-secondary">View Services</a>
+    </div>
+  </div>
+  <div class="hero-stats" role="list" aria-label="Key statistics">
+    <div class="stat" role="listitem"><div class="stat-num" aria-label="FAA Part 107">107</div><div class="stat-label">FAA Certified</div></div>
+    <div class="stat" role="listitem"><div class="stat-num" aria-label="24 hour delivery">24H</div><div class="stat-label">Turnaround</div></div>
+    <div class="stat" role="listitem"><div class="stat-num" aria-label="San Antonio">SA</div><div class="stat-label">Based Locally</div></div>
+    <div class="stat" role="listitem"><div class="stat-num" aria-label="5 star">5★</div><div class="stat-label">Professional</div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services section-divider" id="services" aria-labelledby="services-heading">
+  <div class="services-header reveal">
+    <div>
+      <p class="section-label" aria-hidden="true">What We Do</p>
+      <h2 class="section-title" id="services-heading">AERIAL SERVICES<br>BUILT FOR RESULTS</h2>
+    </div>
+    <p class="section-desc">From real estate listings to industrial inspections — every flight is executed with precision and a 24-hour delivery guarantee.</p>
+  </div>
+  <div class="services-grid" role="list">
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">01</span><span class="service-icon" role="img" aria-label="House">🏠</span><h3 class="service-name">Real Estate Aerial</h3><p class="service-desc">Aerial photos and cinematic video that make listings stand out. Full property media packages including ground-level Canon photography available.</p><p class="service-price">From $200</p></article>
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">02</span><span class="service-icon" role="img" aria-label="Construction">🏗️</span><h3 class="service-name">Construction Progress</h3><p class="service-desc">Weekly or bi-weekly aerial documentation from groundbreaking to ribbon cutting. Date-stamped, geo-tagged deliverables within 24 hours.</p><p class="service-price">From $250</p></article>
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">03</span><span class="service-icon" role="img" aria-label="Roof">🏚️</span><h3 class="service-name">Roof Inspection</h3><p class="service-desc">Aerial documentation for insurance claims and storm damage assessment. All roof faces captured and delivered same day.</p><p class="service-price">From $100</p></article>
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">04</span><span class="service-icon" role="img" aria-label="Solar">☀️</span><h3 class="service-name">Solar Site Surveys</h3><p class="service-desc">Pre-installation aerial surveys, construction progress, and visual panel inspection for solar farms and commercial arrays.</p><p class="service-price">From $300</p></article>
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">05</span><span class="service-icon" role="img" aria-label="Industrial">⚙️</span><h3 class="service-name">Industrial Inspection</h3><p class="service-desc">Pipeline corridors, storage tanks, and facility documentation for oil and gas operators across South Texas.</p><p class="service-price">From $400</p></article>
+    <article class="service-card reveal" role="listitem"><span class="service-card-num" aria-hidden="true">06</span><span class="service-icon" role="img" aria-label="Map">🗺️</span><h3 class="service-name">Site Mapping</h3><p class="service-desc">Orthomosaic maps and 3D models for developers and engineers. GeoTIFF deliverables compatible with AutoCAD and ArcGIS.</p><p class="service-price">From $300</p></article>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about" aria-labelledby="about-heading">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-card-main">
+        <h2 class="about-name" id="about-heading">RYAN MCTIER</h2>
+        <p class="about-role">Owner &amp; Chief Pilot · Gone Airborne Drone Services</p>
+        <p class="about-text">US Army veteran and oil &amp; gas operations manager with over 10 years of industry experience. FAA Part 107 certified commercial drone pilot based in San Antonio, Texas. Military discipline meets energy sector expertise on every flight.</p>
+        <p class="about-text">Gone Airborne is a veteran-owned business built on the belief that every client deserves professional-grade aerial content, delivered on time, every time — whether that's a real estate listing, a construction site, or an industrial inspection.</p>
+        <ul class="credential-list" aria-label="Credentials">
+          <li class="credential-item">FAA Part 107 Remote Pilot Certificate — Active</li>
+          <li class="credential-item">US Army Veteran — Logistics &amp; Operations</li>
+          <li class="credential-item">MBA — Supply Chain Management</li>
+          <li class="credential-item">MS — Natural Gas Engineering</li>
+          <li class="credential-item">10+ Years Oil &amp; Gas Industry Experience</li>
+          <li class="credential-item">Drone Liability Insured · LLC Established</li>
+        </ul>
+        <p class="veteran-badge" role="note">⭐ Veteran Owned &amp; Operated</p>
+      </div>
+      <div class="about-float-card" aria-hidden="true"><div class="float-num">24H</div><div class="float-label">Delivery Guarantee</div></div>
+    </div>
+    <div class="reveal">
+      <p class="section-label" aria-hidden="true">About Us</p>
+      <h2 class="section-title">BUILT<br>DIFFERENT</h2>
+      <p class="section-desc" style="margin-bottom:24px">Most drone pilots show up with a controller and call it a day. We show up with military precision, industry knowledge, and a commitment to delivering content that moves the needle for our clients.</p>
+      <p class="section-desc">Our oil and gas background means we understand the operational demands of industrial clients. Our real estate media capability means agents get everything in one shoot — aerials, ground photography, and social media-ready video walkthroughs. One stop. One invoice. Zero hassle.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets section-divider" id="markets" aria-labelledby="markets-heading">
+  <div class="markets-inner">
+    <div class="markets-header reveal">
+      <div><p class="section-label" aria-hidden="true">Industries We Serve</p><h2 class="section-title" id="markets-heading">YOUR INDUSTRY.<br>OUR EXPERTISE.</h2></div>
+      <p class="section-desc">Four markets. One operator. Zero excuses.</p>
+    </div>
+    <div class="markets-grid" role="list">
+      <article class="market-card reveal" role="listitem"><span class="market-icon" role="img" aria-label="Houses">🏘️</span><h3 class="market-name">Real Estate</h3><p class="market-desc">Aerial photography and video for residential and commercial listings. Full property media packages with ground-level photography. San Antonio and surrounding areas.</p></article>
+      <article class="market-card reveal" role="listitem"><span class="market-icon" role="img" aria-label="Construction">🏗️</span><h3 class="market-name">Construction</h3><p class="market-desc">Weekly progress documentation, pre-construction surveys, and stakeholder reporting for builders, developers, and general contractors across South Texas.</p></article>
+      <article class="market-card reveal" role="listitem"><span class="market-icon" role="img" aria-label="Solar">🌞</span><h3 class="market-name">Solar Energy</h3><p class="market-desc">Site surveys, installation progress, and visual panel inspections for solar farms and commercial arrays. Thermal inspection capability coming Q4 2026.</p></article>
+      <article class="market-card reveal" role="listitem"><span class="market-icon" role="img" aria-label="Oil and gas">⛽</span><h3 class="market-name">Oil &amp; Gas</h3><p class="market-desc">Pipeline corridor surveys, facility inspection documentation, and pre-maintenance site reconnaissance — backed by 10+ years of O&amp;G operational experience.</p></article>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio section-divider" id="portfolio" aria-labelledby="portfolio-heading">
+  <div class="portfolio-header reveal">
+    <p class="section-label" aria-hidden="true">Recent Work</p>
+    <h2 class="section-title" id="portfolio-heading">FROM THE<br>FIELD</h2>
+    <p class="section-desc">A look at recent flights — aerial photography, 3D mapping, and site documentation across San Antonio and beyond.</p>
+  </div>
+  <div class="portfolio-grid" role="list">
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/rimrock-plaza-3d-map.jpg" alt="3D orthomosaic map of Rimrock Plaza pre-construction site" loading="lazy"><div class="portfolio-caption">Rimrock Plaza — 3D Site Map</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/rimrock-plaza2-3d-map.jpg" alt="3D orthomosaic map of Rimrock Plaza site, alternate view" loading="lazy"><div class="portfolio-caption">Rimrock Plaza — Site Overview</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/rimrock-plaza3-3d-map.jpg" alt="3D orthomosaic map of Rimrock Plaza site, angled view" loading="lazy"><div class="portfolio-caption">Rimrock Plaza — Angled View</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/rimrock-plaza4-3d-map.jpg" alt="3D orthomosaic map of Rimrock Plaza site, runway view" loading="lazy"><div class="portfolio-caption">Rimrock Plaza — Site Map Detail</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/Industrial.jpg" alt="Aerial view of an industrial distribution facility" loading="lazy"><div class="portfolio-caption">Industrial Facility — Aerial Survey</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/Tanks.jpg" alt="Aerial view of fuel storage tanks at a commercial facility" loading="lazy"><div class="portfolio-caption">Storage Tank Inspection</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/Roof_1.jpg" alt="Aerial roof inspection of a commercial building" loading="lazy"><div class="portfolio-caption">Commercial Roof Inspection</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/Roof_2.jpg" alt="Close-up aerial roof inspection showing HVAC equipment" loading="lazy"><div class="portfolio-caption">Roof Detail — HVAC Survey</div></div>
+    <div class="portfolio-item reveal" role="listitem"><img src="images/portfolio/Sky.jpg" alt="Dusk aerial view of a San Antonio street corridor" loading="lazy"><div class="portfolio-caption">San Antonio at Dusk</div></div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing section-divider" id="pricing" aria-labelledby="pricing-heading">
+  <div class="pricing-inner">
+    <div class="pricing-header reveal">
+      <p class="section-label">Investment</p>
+      <h2 class="section-title" id="pricing-heading">TRANSPARENT PRICING.<br>ZERO SURPRISES.</h2>
+      <p class="section-desc">Professional aerial services at rates that make sense for your business. All packages include 24-hour delivery and FAA-authorized flight.</p>
+    </div>
+    <div class="pricing-grid" role="list">
+      <div class="pricing-card reveal" role="listitem" aria-label="Essential package starting at 200 dollars">
+        <p class="pricing-tier">Essential</p>
+        <p class="pricing-price">$200</p>
+        <p class="pricing-price-sub">Starting price · per engagement</p>
+        <ul class="pricing-features" aria-label="Features">
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>20+ edited aerial photos</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>All property angles covered</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>24-hour Google Drive delivery</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>MLS-ready file formats</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>FAA authorized flight included</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Get Started</a>
+      </div>
+      <div class="pricing-card featured reveal" role="listitem" aria-label="Full Media package, most popular, starting at 500 dollars">
+        <div class="featured-badge" role="note">Most Popular</div>
+        <p class="pricing-tier">Full Media</p>
+        <p class="pricing-price">$500</p>
+        <p class="pricing-price-sub">Starting price · complete package</p>
+        <ul class="pricing-features" aria-label="Features">
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Everything in Essential</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Ground-level Canon photography</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>60–90 second video reel</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Social media vertical cuts</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Interior and exterior coverage</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>One revision round included</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Book This Package</a>
+      </div>
+      <div class="pricing-card reveal" role="listitem" aria-label="Commercial package starting at 400 dollars">
+        <p class="pricing-tier">Commercial</p>
+        <p class="pricing-price">$400</p>
+        <p class="pricing-price-sub">Starting price · per visit</p>
+        <ul class="pricing-features" aria-label="Features">
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Construction progress documentation</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Industrial facility inspection</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Solar site surveys and mapping</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Orthomosaic map deliverables</li>
+          <li class="pricing-feature"><em class="pricing-feature-icon" aria-hidden="true">→</em>Recurring schedule discounts</li>
+        </ul>
+        <a href="#contact" class="pricing-btn">Request Quote</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why" aria-labelledby="why-heading">
+  <div class="why-inner">
+    <div class="reveal">
+      <p class="section-label" aria-hidden="true">Why Gone Airborne</p>
+      <h2 class="section-title" id="why-heading">BUILT<br>DIFFERENT.</h2>
+      <p class="section-desc" style="margin-top:20px">We're not a hobbyist with a drone. We're a veteran-owned, FAA-certified commercial operation with the industry background to back it up.</p>
+    </div>
+    <div class="why-grid reveal" role="list">
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Medal">🎖️</span><h3 class="why-title">Veteran Owned</h3><p class="why-desc">US Army veteran bringing military discipline and operational excellence to every flight and every client relationship.</p></div>
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Airplane">✈️</span><h3 class="why-title">FAA Part 107</h3><p class="why-desc">Fully licensed for commercial drone operations. Drone liability insured and LAANC compliant on every single job.</p></div>
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Lightning">⚡</span><h3 class="why-title">24hr Delivery</h3><p class="why-desc">Every deliverable in your inbox within 24 hours of the shoot. No waiting, no chasing. Just results.</p></div>
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Wrench">🔧</span><h3 class="why-title">Industry Knowledge</h3><p class="why-desc">10+ years in oil &amp; gas operations. We understand your industry — not just our camera settings.</p></div>
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Package">📦</span><h3 class="why-title">One Stop Shop</h3><p class="why-desc">Aerial drone, ground photography, and video walkthrough — one visit, one invoice, one team. Done.</p></div>
+      <div class="why-card" role="listitem"><span class="why-icon" role="img" aria-label="Map pin">📍</span><h3 class="why-title">Locally Based</h3><p class="why-desc">San Antonio native. Available on short notice across Bexar County and South Texas — no out-of-town travel fees.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact section-divider" id="contact" aria-labelledby="contact-heading">
+  <div class="contact-inner">
+    <div class="reveal">
+      <p class="section-label" aria-hidden="true">Get In Touch</p>
+      <h2 class="section-title" id="contact-heading">READY TO<br>FLY?</h2>
+      <p class="section-desc" style="margin:24px 0 48px">Whether you have a listing to shoot, a site to document, or a project that needs a higher perspective — we're ready. Reach out and we'll get you scheduled.</p>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">📞</div>
+        <div><p class="contact-detail-label">Phone / Text</p><p class="contact-detail-value"><a href="tel:+17863878280" aria-label="Call Gone Airborne">786-387-8280</a></p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">✉️</div>
+        <!-- EDIT: Replace with your business email once set up -->
+        <div><p class="contact-detail-label">Email</p><p class="contact-detail-value"><a href="mailto:rncaeronauticals@yahoo.com" aria-label="Email Gone Airborne">rncaeronauticals@yahoo.com</a></p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">📍</div>
+        <div><p class="contact-detail-label">Service Area</p><p class="contact-detail-value">San Antonio, TX &amp; South Texas</p></div>
+      </div>
+      <div class="contact-detail">
+        <div class="contact-detail-icon" aria-hidden="true">🕐</div>
+        <div><p class="contact-detail-label">Availability</p><p class="contact-detail-value">7 Days a Week · Short Notice Welcome</p></div>
+      </div>
+      <p class="veteran-badge" role="note" style="margin-top:40px">⭐ Veteran Owned · FAA Part 107 Certified · Insured</p>
+    </div>
+
+    <div class="reveal">
+      <!-- SECURITY: Formspree handles email delivery without exposing your address -->
+      <!-- EDIT: Sign up at formspree.io, create a form, replace xeewgoja below -->
+      <form id="contactForm" novalidate aria-label="Contact form" action="https://formspree.io/f/xeewgoja" method="POST">
+        <!-- SECURITY: Honeypot — do not remove -->
+        <div style="display:none" aria-hidden="true"><label for="website">Leave blank</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div class="form-group">
+          <label for="name" class="form-label">Your Name <span class="required" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="First Last" required autocomplete="name" aria-required="true" aria-describedby="name-error">
+          <p class="form-error" id="name-error" role="alert" aria-live="polite"></p>
+        </div>
+        <div class="form-group">
+          <label for="phone" class="form-label">Phone Number</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="(___) ___-____" autocomplete="tel">
+        </div>
+        <div class="form-group">
+          <label for="email" class="form-label">Email Address <span class="required" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="your@email.com" required autocomplete="email" aria-required="true" aria-describedby="email-error">
+          <p class="form-error" id="email-error" role="alert" aria-live="polite"></p>
+        </div>
+        <div class="form-group">
+          <label for="service" class="form-label">Service Needed <span class="required" aria-hidden="true">*</span><span class="sr-only">(required)</span></label>
+          <select id="service" name="service" class="form-select" required aria-required="true" aria-describedby="service-error">
+            <option value="" disabled selected>Select a service...</option>
+            <option value="Real Estate Aerial Photography">Real Estate Aerial Photography</option>
+            <option value="Full Property Media Package">Full Property Media Package</option>
+            <option value="Roof Inspection Documentation">Roof Inspection Documentation</option>
+            <option value="Construction Progress Documentation">Construction Progress Documentation</option>
+            <option value="Solar Site Survey">Solar Site Survey</option>
+            <option value="Industrial / O&G Inspection">Industrial / O&amp;G Inspection</option>
+            <option value="Site Mapping / Orthomosaic">Site Mapping / Orthomosaic</option>
+            <option value="Other">Other</option>
+          </select>
+          <p class="form-error" id="service-error" role="alert" aria-live="polite"></p>
+        </div>
+        <div class="form-group">
+          <label for="message" class="form-label">Project Details</label>
+          <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project — address, timeline, or any special requirements..." aria-describedby="message-hint"></textarea>
+          <p class="form-note" id="message-hint">Include the property address or project location if available.</p>
+        </div>
+        <button type="submit" class="form-btn" id="submitBtn"><span id="btnText">Send Message</span><span id="btnArrow" aria-hidden="true">→</span></button>
+        <p class="form-success" id="formSuccess" role="status" aria-live="polite">✓ Message sent! We'll be in touch within 24 hours.</p>
+        <p class="form-error" id="formGenError" role="alert" aria-live="polite" style="display:none"></p>
+        <p class="form-note" style="margin-top:16px">Fields marked <span style="color:#ff6b6b">*</span> are required. Your information is never sold or shared.</p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer role="contentinfo">
+  <div class="footer-inner">
+    <div>
+      <a href="#home" class="footer-logo" aria-label="Gone Airborne — back to top">GONE <span>AIRBORNE</span></a>
+      <p class="footer-tagline">Drone Services · San Antonio, Texas</p>
+    </div>
+    <nav aria-label="Footer navigation">
+      <ul class="footer-links" role="list">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#markets">Markets</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <p class="footer-copy">© 2026 Gone Airborne Drone Services LLC · All Rights Reserved</p>
+  </div>
+</footer>
+
+<script>
+'use strict';
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.dataset.scrolled=window.scrollY>80;},{passive:true});
+const navToggle=document.getElementById('navToggle');
+const navLinks=document.getElementById('navLinks');
+navToggle.addEventListener('click',()=>{const o=navLinks.classList.toggle('open');navToggle.setAttribute('aria-expanded',o);navToggle.setAttribute('aria-label',o?'Close navigation menu':'Open navigation menu');navToggle.textContent=o?'✕':'☰';});
+navLinks.querySelectorAll('a').forEach(l=>{l.addEventListener('click',()=>{navLinks.classList.remove('open');navToggle.setAttribute('aria-expanded','false');navToggle.setAttribute('aria-label','Open navigation menu');navToggle.textContent='☰';});});
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){const h=this.getAttribute('href');if(h==='#')return;const t=document.querySelector(h);if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});t.setAttribute('tabindex','-1');t.focus({preventScroll:true});}});});
+const reveals=document.querySelectorAll('.reveal');
+const ro=new IntersectionObserver((entries)=>{entries.forEach((entry,i)=>{if(entry.isIntersecting){setTimeout(()=>entry.target.classList.add('visible'),i*80);ro.unobserve(entry.target);}});},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+reveals.forEach(el=>ro.observe(el));
+const btt=document.getElementById('backToTop');
+window.addEventListener('scroll',()=>{btt.classList.toggle('visible',window.scrollY>500);},{passive:true});
+btt.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});document.querySelector('nav').focus();});
+function sanitize(s){if(typeof s!=='string')return'';return s.trim().replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;').replace(/\//g,'&#x2F;');}
+let lastSubmit=0;const RATE=30000;
+const form=document.getElementById('contactForm');
+const submitBtn=document.getElementById('submitBtn');
+const btnText=document.getElementById('btnText');
+const btnArrow=document.getElementById('btnArrow');
+const formSuccess=document.getElementById('formSuccess');
+const formGenError=document.getElementById('formGenError');
+function showErr(fid,eid,msg){const f=document.getElementById(fid);const e=document.getElementById(eid);f.setAttribute('aria-invalid','true');e.textContent=msg;e.classList.add('visible');}
+function clearErr(fid,eid){const f=document.getElementById(fid);const e=document.getElementById(eid);f.setAttribute('aria-invalid','false');e.textContent='';e.classList.remove('visible');}
+function validate(){let v=true;const name=sanitize(document.getElementById('name').value);if(!name||name.length<2){showErr('name','name-error','Please enter your full name.');v=false;}else{clearErr('name','name-error');}const email=sanitize(document.getElementById('email').value);const ep=/^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;if(!email||!ep.test(email)){showErr('email','email-error','Please enter a valid email address.');v=false;}else{clearErr('email','email-error');}const svc=document.getElementById('service').value;if(!svc){showErr('service','service-error','Please select a service.');v=false;}else{clearErr('service','service-error');}return v;}
+if(form){['name','email','phone'].forEach(id=>{const f=document.getElementById(id);if(f){f.addEventListener('input',()=>{f.setAttribute('aria-invalid','false');const e=document.getElementById(id+'-error');if(e){e.textContent='';e.classList.remove('visible');}});}});
+form.addEventListener('submit',async function(e){e.preventDefault();if(Date.now()-lastSubmit<RATE){formGenError.textContent='Please wait before submitting again.';formGenError.style.display='block';return;}if(document.getElementById('website').value)return;if(!validate()){const fe=form.querySelector('[aria-invalid="true"]');if(fe)fe.focus();return;}submitBtn.disabled=true;btnText.textContent='Sending...';btnArrow.textContent='⟳';formSuccess.classList.remove('visible');formGenError.style.display='none';try{const fd=new FormData(form);const r=await fetch(form.action,{method:'POST',body:fd,headers:{'Accept':'application/json'}});if(r.ok){lastSubmit=Date.now();form.reset();formSuccess.classList.add('visible');formSuccess.focus();btnText.textContent='Message Sent';btnArrow.textContent='✓';submitBtn.style.background='#2E7D32';submitBtn.style.borderColor='#2E7D32';setTimeout(()=>{btnText.textContent='Send Message';btnArrow.textContent='→';submitBtn.style.background='';submitBtn.style.borderColor='';submitBtn.disabled=false;},4000);}else{throw new Error('Failed');}}catch(err){submitBtn.disabled=false;btnText.textContent='Send Message';btnArrow.textContent='→';formGenError.textContent='Something went wrong. Please call us directly at 786-387-8280.';formGenError.style.display='block';formGenError.focus();}});}
+</script>
+</body>
+</html>
